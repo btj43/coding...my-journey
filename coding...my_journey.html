@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background-color: #0c0e31;
+        background-image: url("starrysky.jpg");
+        color: #faf9f6;
+      }
+      .title {
+        text-align: center;
+      }
+      .magic {
+        font-size: 20px;
+        text-align: center;
+      }
+      .journey-timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      .journey-timeline::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background-color: #ffffff;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+      }
+
+      .event-row {
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .event-row::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        top: 0;
+        left: 50%;
+        margin-left: -10px;
+      }
+
+      .event-row.left .event-box {
+        left: 60%;
+        width: 30%;
+      }
+
+      .event-row.right .event-box {
+        left: 10%;
+        width: 30%;
+      }
+
+      .event-box {
+        position: relative;
+        left: 30px;
+      }
+
+      .event-text {
+        margin-bottom: 10px;
+        padding: 5px;
+      }
+      .languages {
+        font-weight: bold;
+        text-align: center;
+        font-size: 25px;
+        border: 2px solid #e396df;
+        border-radius: 8px;
+      }
+      button {
+        animation: wiggle s linear infinite;
+      }
+      @keyframes wiggle {
+        0%,
+        7% {
+          transform: rotateZ(0);
+        }
+        15% {
+          transform: rotateZ(-15deg);
+        }
+        20% {
+          transform: rotateZ(10deg);
+        }
+        25% {
+          transform: rotateZ(-10deg);
+        }
+        30% {
+          transform: rotateZ(6deg);
+        }
+        35% {
+          transform: rotateZ(-4deg);
+        }
+        40%,
+        100% {
+          transform: rotateZ(0);
+        }
+      }
+      .author {
+        text-align: center;
+        color: #e396df;
+      }
+      .author-link {
+        color: #e396df;
+        text-decoration: none;
+      }
+      .author-link:active {
+        color: #0c0e31;
+      }
+
+      .glow-on-hover {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .glow-on-hover:before {
+        content: "";
+        background: linear-gradient(
+          45deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #7a00ff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+      }
+
+      .glow-on-hover:active {
+        color: #000;
+      }
+
+      .glow-on-hover:active:after {
+        background: transparent;
+      }
+
+      .glow-on-hover:hover:before {
+        opacity: 1;
+      }
+
+      .glow-on-hover:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #111;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+      }
+
+      @keyframes glowing {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding...My Journey</title>
+  </head>
+  <body>
+    <h1 class="title">My journey to code</h1>
+    <div class="magic">
+      The internet is just magic right...? <br />
+      2022 I decided to investigate
+    </div>
+    <br />
+    <div class="journey-timeline">
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            At first I looked through many coding languages in my quest to find
+            the foundations of the internet.
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">Python, SQL, C++......</div>
+        </div>
+      </div>
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            Then in a random £20 online course from who knows where I learnt the
+            3 pillars of the internet.
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text languages">
+            HTML <br />CSS <br />Javascript
+          </div>
+        </div>
+      </div>
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            Getting a pink, underlined '<span
+              style="text-decoration: underline; color: #e396df"
+              >Hello World</span
+            >' printed on a page... I was hooked
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            I knew i needed to learn more but how? The internet contains so much
+            information just waiting to be absorbed!
+          </div>
+        </div>
+      </div>
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            Codeacademy was recommended to me to a really incredible mentor and
+            I was off, testing the waters of my new found languages.
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            I worked with people in the tech team to learn from them and asked
+            endless questions
+          </div>
+        </div>
+      </div>
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            MY favourite quote from one of my mentors 'we don't know that much,
+            we're just really great at googling!'
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            Unfortunately whilst enjoying this journey I found out I was being
+            made redundant
+          </div>
+        </div>
+      </div>
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            It must hae been the universe telling me to take the plunge...
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            So I did and now I have been a software developer for 6 months!
+          </div>
+        </div>
+      </div>
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            I have so much to learn, ever day is a step learning curve
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            So trust me, this journey is faaar from over!
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="author">
+      <button class="glow-on-hover">
+        <a class="author-link" href="https://github.com/btj43">
+          Coded by Beth Jones
+        </a>
+      </button>
+    </div>
+    <br />
+    <script></script>
+  </body>
+</html>
