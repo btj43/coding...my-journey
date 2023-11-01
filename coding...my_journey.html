@@ -22,53 +22,47 @@
         margin: 0 auto;
         padding: 40px 20px;
       }
-
       .journey-timeline::after {
         content: "";
         position: absolute;
         width: 2px;
-        background-color: #ffffff;
+        background-color: #faf9f6;
         top: 0;
         bottom: 0;
         left: 50%;
         margin-left: -1px;
       }
-
       .event-row {
         position: relative;
         margin-bottom: 30px;
       }
-
       .event-row::after {
         content: "";
         position: absolute;
         width: 20px;
         height: 20px;
-        background-color: #ffffff;
+        background-color: #faf9f6;
         border-radius: 50%;
         top: 0;
         left: 50%;
         margin-left: -10px;
       }
-
       .event-row.left .event-box {
         left: 60%;
         width: 30%;
       }
-
       .event-row.right .event-box {
         left: 10%;
         width: 30%;
       }
-
       .event-box {
         position: relative;
         left: 30px;
       }
-
       .event-text {
         margin-bottom: 10px;
         padding: 5px;
+        text-wrap: pretty;
       }
       .languages {
         font-weight: bold;
@@ -77,33 +71,8 @@
         border: 2px solid #e396df;
         border-radius: 8px;
       }
-      button {
-        animation: wiggle s linear infinite;
-      }
-      @keyframes wiggle {
-        0%,
-        7% {
-          transform: rotateZ(0);
-        }
-        15% {
-          transform: rotateZ(-15deg);
-        }
-        20% {
-          transform: rotateZ(10deg);
-        }
-        25% {
-          transform: rotateZ(-10deg);
-        }
-        30% {
-          transform: rotateZ(6deg);
-        }
-        35% {
-          transform: rotateZ(-4deg);
-        }
-        40%,
-        100% {
-          transform: rotateZ(0);
-        }
+      .languages:hover {
+        box-shadow: 0 0 50px 15px #48abe0;
       }
       .author {
         text-align: center;
@@ -112,11 +81,16 @@
       .author-link {
         color: #e396df;
         text-decoration: none;
+        font-weight: bold;
+      }
+      .author-link:hover {
+        background-color: #0c0e31;
+        border-radius: 10px;
+        padding: 5px;
       }
       .author-link:active {
         color: #0c0e31;
       }
-
       .glow-on-hover {
         border: none;
         background-color: transparent;
@@ -127,7 +101,6 @@
         border-radius: 10px;
         padding: 10px;
       }
-
       .glow-on-hover:before {
         content: "";
         background: linear-gradient(
@@ -155,31 +128,26 @@
         transition: opacity 0.3s ease-in-out;
         border-radius: 10px;
       }
-
       .glow-on-hover:active {
-        color: #000;
+        color: #0c0e31;
       }
-
       .glow-on-hover:active:after {
         background: transparent;
       }
-
       .glow-on-hover:hover:before {
         opacity: 1;
       }
-
       .glow-on-hover:after {
         z-index: -1;
         content: "";
         position: absolute;
         width: 100%;
         height: 100%;
-        background: #111;
+        background-color: transparent;
         left: 0;
         top: 0;
         border-radius: 10px;
       }
-
       @keyframes glowing {
         0% {
           background-position: 0 0;
@@ -189,6 +157,35 @@
         }
         100% {
           background-position: 0 0;
+        }
+      }
+      button {
+        animation: wiggle 4s linear infinite;
+      }
+      /* Keyframes */
+      @keyframes wiggle {
+        0%,
+        7% {
+          transform: rotateZ(0);
+        }
+        15% {
+          transform: rotateZ(-15deg);
+        }
+        20% {
+          transform: rotateZ(10deg);
+        }
+        25% {
+          transform: rotateZ(-10deg);
+        }
+        30% {
+          transform: rotateZ(6deg);
+        }
+        35% {
+          transform: rotateZ(-4deg);
+        }
+        40%,
+        100% {
+          transform: rotateZ(0);
         }
       }
     </style>
@@ -210,14 +207,13 @@
             At first I looked through many coding languages in my quest to find
             the foundations of the internet.
           </div>
+          <div>
+            Confidence: 🙁 <br />
+            Excitment: 😊 <br />Frustrsation: 🌤️
+          </div>
         </div>
       </div>
       <div class="event-row left">
-        <div class="event-box">
-          <div class="event-text">Python, SQL, C++......</div>
-        </div>
-      </div>
-      <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
             Then in a random £20 online course from who knows where I learnt the
@@ -225,14 +221,14 @@
           </div>
         </div>
       </div>
-      <div class="event-row left">
+      <div class="event-row right">
         <div class="event-box">
           <div class="event-text languages">
             HTML <br />CSS <br />Javascript
           </div>
         </div>
       </div>
-      <div class="event-row right">
+      <div class="event-row left">
         <div class="event-box">
           <div class="event-text">
             Getting a pink, underlined '<span
@@ -242,7 +238,7 @@
           </div>
         </div>
       </div>
-      <div class="event-row left">
+      <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
             I knew i needed to learn more but how? The internet contains so much
@@ -250,7 +246,7 @@
           </div>
         </div>
       </div>
-      <div class="event-row right">
+      <div class="event-row left">
         <div class="event-box">
           <div class="event-text">
             Codeacademy was recommended to me to a really incredible mentor and
@@ -258,7 +254,7 @@
           </div>
         </div>
       </div>
-      <div class="event-row left">
+      <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
             I worked with people in the tech team to learn from them and asked
@@ -266,7 +262,7 @@
           </div>
         </div>
       </div>
-      <div class="event-row right">
+      <div class="event-row left">
         <div class="event-box">
           <div class="event-text">
             MY favourite quote from one of my mentors 'we don't know that much,
@@ -274,7 +270,7 @@
           </div>
         </div>
       </div>
-      <div class="event-row left">
+      <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
             Unfortunately whilst enjoying this journey I found out I was being
@@ -282,28 +278,28 @@
           </div>
         </div>
       </div>
-      <div class="event-row right">
+      <div class="event-row left">
         <div class="event-box">
           <div class="event-text">
             It must hae been the universe telling me to take the plunge...
           </div>
         </div>
       </div>
-      <div class="event-row left">
+      <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
             So I did and now I have been a software developer for 6 months!
           </div>
         </div>
       </div>
-      <div class="event-row right">
+      <div class="event-row left">
         <div class="event-box">
           <div class="event-text">
             I have so much to learn, ever day is a step learning curve
           </div>
         </div>
       </div>
-      <div class="event-row left">
+      <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
             So trust me, this journey is faaar from over!
