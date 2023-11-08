@@ -8,12 +8,55 @@
         background-color: #0c0e31;
         background-image: url("starrysky.jpg");
         color: #faf9f6;
+        background-attachment: fixed;
+        font-weight: 300;
+      }
+
+      header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
       }
       .title {
         text-align: center;
+        font-size: 70px;
+        font-weight: 300;
+        color: #e396df;
+        border-right: 3px solid #ffffff; /*This will be the blinking cursor*/
+        animation: cursor 1s infinite step-end, typing 15s infinite steps(18);
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      @keyframes cursor {
+        0%,
+        100% {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #ffffff;
+        }
+      }
+      @keyframes typing {
+        0% {
+          width: 0ch;
+        } /*Text is hidden*/
+        30% {
+          width: 18ch;
+        } /*The enitre header will be typed out 1 character at a time*/
+        80% {
+          width: 18ch;
+        } /*Text stays visible*/
+        90% {
+          width: 0ch;
+        } /*Text is deleted*/
+        100% {
+          width: 0ch;
+        } /*Text stays hidden*/
       }
       .magic {
-        font-size: 20px;
+        font-size: 21px;
         text-align: center;
       }
       .journey-timeline {
@@ -58,11 +101,15 @@
       .event-box {
         position: relative;
         left: 30px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 24px;
+        padding: 10px;
       }
       .event-text {
         margin-bottom: 10px;
         padding: 5px;
         text-wrap: pretty;
+        font-size: 18px;
       }
       .languages {
         font-weight: bold;
@@ -74,6 +121,13 @@
       .languages:hover {
         box-shadow: 0 0 50px 15px #48abe0;
       }
+      .emotions {
+        text-align: center;
+        font-size: 12px;
+      }
+      .emotions:hover {
+        font-size: 17px;
+      }
       .author {
         text-align: center;
         color: #e396df;
@@ -81,7 +135,6 @@
       .author-link {
         color: #e396df;
         text-decoration: none;
-        font-weight: bold;
       }
       .author-link:hover {
         background-color: #0c0e31;
@@ -89,7 +142,7 @@
         padding: 5px;
       }
       .author-link:active {
-        color: #0c0e31;
+        color: #faf9f6;
       }
       .glow-on-hover {
         border: none;
@@ -194,7 +247,9 @@
     <title>Coding...My Journey</title>
   </head>
   <body>
-    <h1 class="title">My journey to code</h1>
+    <header>
+      <h1 class="title">My journey to code...</h1>
+    </header>
     <div class="magic">
       The internet is just magic right...? <br />
       2022 I decided to investigate
@@ -207,10 +262,7 @@
             At first I looked through many coding languages in my quest to find
             the foundations of the internet.
           </div>
-          <div>
-            Confidence: 🙁 <br />
-            Excitment: 😊 <br />Frustrsation: 🌤️
-          </div>
+          <div class="emotions">Emotion gage: 🧐</div>
         </div>
       </div>
       <div class="event-row left">
@@ -219,6 +271,7 @@
             Then in a random £20 online course from who knows where I learnt the
             3 pillars of the internet.
           </div>
+          <div class="emotions">Emotion gage: 😊</div>
         </div>
       </div>
       <div class="event-row right">
@@ -236,6 +289,7 @@
               >Hello World</span
             >' printed on a page... I was hooked
           </div>
+          <div class="emotions">Emotion gage: 🤩</div>
         </div>
       </div>
       <div class="event-row right">
@@ -244,6 +298,7 @@
             I knew I needed to learn more but how? The internet contains so much
             information just waiting to be absorbed!
           </div>
+          <div class="emotions">Emotion gage: 🤔</div>
         </div>
       </div>
       <div class="event-row left">
@@ -252,6 +307,7 @@
             Codeacademy was recommended to me, I was off, testing the waters of
             my new found languages.
           </div>
+          <div class="emotions">Emotion gage: 😎</div>
         </div>
       </div>
       <div class="event-row right">
@@ -260,6 +316,7 @@
             I worked with people in the tech team to learn from them and asked
             endless questions
           </div>
+          <div class="emotions">Emotion gage: 🤭</div>
         </div>
       </div>
       <div class="event-row left">
@@ -269,6 +326,7 @@
             all, but they are the best at googling' (thank goodness for ChatGPT
             now...)
           </div>
+          <div class="emotions">Emotion gage: 😊</div>
         </div>
       </div>
       <div class="event-row right">
@@ -277,6 +335,7 @@
             Unfortunately whilst enjoying this journey I found out I was being
             made redundant
           </div>
+          <div class="emotions">Emotion gage: 😢</div>
         </div>
       </div>
       <div class="event-row left">
@@ -284,13 +343,15 @@
           <div class="event-text">
             It must have been the universe telling me to take the leap...
           </div>
+          <div class="emotions">Emotion gage: 🫣</div>
         </div>
       </div>
       <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
-            So I did and I have now been a software developer for 6 months!
+            ...So I did and I have now been a software developer for 6 months!
           </div>
+          <div class="emotions">Emotion gage: 🤗</div>
         </div>
       </div>
       <div class="event-row left">
@@ -299,6 +360,7 @@
             I have so much to learn, ever day is a steep learning curve (some
             days are more of a straight up cliff!)
           </div>
+          <div class="emotions">Emotion gage: 😵‍💫</div>
         </div>
       </div>
       <div class="event-row right">
@@ -306,6 +368,7 @@
           <div class="event-text">
             So trust me, this journey is faaar from over!
           </div>
+          <div class="emotions">Emotion gage: 😇🥳</div>
         </div>
       </div>
     </div>
