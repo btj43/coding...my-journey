@@ -102,7 +102,7 @@
         position: relative;
         left: 30px;
         background-color: rgba(0, 0, 0, 0.3);
-        border-radius: 24px;
+        border-radius: 30px;
         padding: 10px;
       }
       .event-text {
@@ -148,6 +148,27 @@
       .author-link:active {
         color: #faf9f6;
       }
+
+      @media (max-width: 767px) {
+        .title {
+          font-size: 30px;
+        }
+        .magic {
+          font-size: 15px;
+        }
+        .event-row.left .event-box {
+          left: 60%;
+          width: 40%;
+        }
+        .event-row.right .event-box {
+          left: -5%;
+          width: 40%;
+        }
+        .event-text {
+          font-size: 15px;
+        }
+      }
+
       .glow-on-hover {
         border: none;
         background-color: transparent;
