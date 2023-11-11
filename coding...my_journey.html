@@ -24,7 +24,7 @@
         font-size: 70px;
         font-weight: 300;
         color: #e396df;
-        border-right: 3px solid #ffffff; /*This will be the blinking cursor*/
+        border-right: 3px solid #faf9f6;
         animation: cursor 1s infinite step-end, typing 15s infinite steps(18);
         white-space: nowrap;
         overflow: hidden;
@@ -35,25 +35,25 @@
           border-color: transparent;
         }
         50% {
-          border-color: #ffffff;
+          border-color: #faf9f6;
         }
       }
       @keyframes typing {
         0% {
           width: 0ch;
-        } /*Text is hidden*/
+        }
         30% {
           width: 18ch;
-        } /*The enitre header will be typed out 1 character at a time*/
+        }
         80% {
           width: 18ch;
-        } /*Text stays visible*/
+        }
         90% {
           width: 0ch;
-        } /*Text is deleted*/
+        }
         100% {
           width: 0ch;
-        } /*Text stays hidden*/
+        }
       }
       .magic {
         font-size: 21px;
@@ -119,14 +119,14 @@
         border: 2px solid #e396df;
         border-radius: 8px;
       }
-      .languages:hover {
+      .languages-row:hover .languages {
         box-shadow: 0 0 50px 15px #48abe0;
       }
       .emotions {
         text-align: center;
         font-size: 12px;
       }
-      .emotions:hover {
+      .event-row:hover .emotions {
         font-size: 17px;
       }
       .emoji {
@@ -134,16 +134,21 @@
       }
       .author {
         text-align: center;
-        color: #e396df;
       }
       .author-link-bubble {
         color: #e396df;
         padding: 10px;
+        font-size: 15px;
+        line-height: 1.5;
       }
       .author-link-bubble:hover {
-        background-color: #0c0e31;
+        color: #0c0e31;
         border-radius: 10px;
-        padding: 5px;
+        padding: 10px;
+        font-weight: 600;
+      }
+      .author-link-bubble:hover .author-link {
+        color: #0c0e31;
       }
       .author-link:active {
         color: #faf9f6;
@@ -151,7 +156,6 @@
       .author-link {
         text-decoration: none;
         color: #e396df;
-        padding: 10px;
       }
       .author-link:hover {
         text-decoration: underline;
@@ -175,7 +179,6 @@
           font-size: 15px;
         }
       }
-
       .glow-on-hover {
         border: none;
         background-color: transparent;
@@ -189,7 +192,7 @@
       .glow-on-hover:before {
         content: "";
         background: linear-gradient(
-          45deg,
+          80deg,
           #ff0000,
           #ff7300,
           #fffb00,
@@ -313,7 +316,7 @@
           </div>
         </div>
       </div>
-      <div class="event-row right">
+      <div class="event-row right languages-row">
         <div class="event-box">
           <div class="event-text languages">
             HTML <br />CSS <br />Javascript
