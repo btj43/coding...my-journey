@@ -102,7 +102,7 @@
         position: relative;
         left: 30px;
         background-color: rgba(0, 0, 0, 0.3);
-        border-radius: 24px;
+        border-radius: 30px;
         padding: 10px;
       }
       .event-text {
@@ -110,6 +110,7 @@
         padding: 5px;
         text-wrap: pretty;
         font-size: 18px;
+        text-align: center;
       }
       .languages {
         font-weight: bold;
@@ -128,15 +129,18 @@
       .emotions:hover {
         font-size: 17px;
       }
+      .emoji {
+        font-size: 25px;
+      }
       .author {
         text-align: center;
         color: #e396df;
       }
-      .author-link {
+      .author-link-bubble {
         color: #e396df;
-        text-decoration: none;
+        padding: 10px;
       }
-      .author-link:hover {
+      .author-link-bubble:hover {
         background-color: #0c0e31;
         border-radius: 10px;
         padding: 5px;
@@ -144,6 +148,34 @@
       .author-link:active {
         color: #faf9f6;
       }
+      .author-link {
+        text-decoration: none;
+        color: #e396df;
+        padding: 10px;
+      }
+      .author-link:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 767px) {
+        .title {
+          font-size: 30px;
+        }
+        .magic {
+          font-size: 15px;
+        }
+        .event-row.left .event-box {
+          left: 60%;
+          width: 40%;
+        }
+        .event-row.right .event-box {
+          left: -5%;
+          width: 40%;
+        }
+        .event-text {
+          font-size: 15px;
+        }
+      }
+
       .glow-on-hover {
         border: none;
         background-color: transparent;
@@ -252,26 +284,33 @@
     </header>
     <div class="magic">
       The internet is just magic right...? <br />
-      2022 I decided to investigate
+      In 2022 I decided to find out 🪄
     </div>
     <br />
     <div class="journey-timeline">
       <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
-            At first I looked through many coding languages in my quest to find
-            the foundations of the internet.
+            I found myself randomly working in a tech company, what better place
+            to find out how it all works! I looked through many coding languages
+            to find out what builds the internet.
           </div>
-          <div class="emotions">Emotion gage: 🧐</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🧐</span>
+          </div>
         </div>
       </div>
       <div class="event-row left">
         <div class="event-box">
           <div class="event-text">
             Then in a random £20 online course from who knows where I learnt the
-            3 pillars of the internet.
+            3 foundations of the internet.
           </div>
-          <div class="emotions">Emotion gage: 😊</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😊</span>
+          </div>
         </div>
       </div>
       <div class="event-row right">
@@ -289,95 +328,141 @@
               >Hello World</span
             >' printed on a page... I was hooked
           </div>
-          <div class="emotions">Emotion gage: 🤩</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🤩</span>
+          </div>
         </div>
       </div>
       <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
-            I knew I needed to learn more but how? The internet contains so much
-            information just waiting to be absorbed!
+            I worked with tech geniuses so I continued to learn from them and
+            ask endless questions.
           </div>
-          <div class="emotions">Emotion gage: 🤔</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🤭</span>
+          </div>
         </div>
       </div>
       <div class="event-row left">
         <div class="event-box">
           <div class="event-text">
-            Codeacademy was recommended to me, I was off, testing the waters of
-            my new found languages.
+            I knew I needed to learn more but the internet contains so much
+            information its a minefield.
           </div>
-          <div class="emotions">Emotion gage: 😎</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🤔</span>
+          </div>
         </div>
       </div>
       <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
-            I worked with people in the tech team to learn from them and asked
-            endless questions
+            Codecademy was recommended to me and I was off playing with the
+            possibilities of code.
           </div>
-          <div class="emotions">Emotion gage: 🤭</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😎</span>
+          </div>
         </div>
       </div>
       <div class="event-row left">
         <div class="event-box">
           <div class="event-text">
-            MY favourite quote from one of my mentors 'developers don't know it
-            all, but they are the best at googling' (thank goodness for ChatGPT
-            now...)
+            One of my mentors once said to me 'developers don't know how to do
+            everything, but they are the best at Googling' (thank goodness for
+            ChatGPT now...)
           </div>
-          <div class="emotions">Emotion gage: 😊</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😊</span>
+          </div>
         </div>
       </div>
       <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
             Unfortunately whilst enjoying this journey I found out I was being
-            made redundant
+            made redundant.
           </div>
-          <div class="emotions">Emotion gage: 😢</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😢</span>
+          </div>
         </div>
       </div>
       <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            Then a little instagram story popped up for me advertising SheCodes
+            👩‍💻
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🤓</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
             It must have been the universe telling me to take the leap...
           </div>
-          <div class="emotions">Emotion gage: 🫣</div>
-        </div>
-      </div>
-      <div class="event-row right">
-        <div class="event-box">
-          <div class="event-text">
-            ...So I did and I have now been a software developer for 6 months!
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🫣</span>
           </div>
-          <div class="emotions">Emotion gage: 🤗</div>
         </div>
       </div>
       <div class="event-row left">
         <div class="event-box">
           <div class="event-text">
-            I have so much to learn, ever day is a steep learning curve (some
-            days are more of a straight up cliff!)
+            ...So I did, I completed my SheCodes course and I have now been a
+            software developer for 6 months!
           </div>
-          <div class="emotions">Emotion gage: 😵‍💫</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🤗</span>
+          </div>
         </div>
       </div>
       <div class="event-row right">
         <div class="event-box">
           <div class="event-text">
-            So trust me, this journey is faaar from over!
+            I have so much to learn, every day is a steep learning curve (some
+            days are more of a straight up cliff!)
           </div>
-          <div class="emotions">Emotion gage: 😇🥳</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😵‍💫</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">This journey is far from over!</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😇 🥳</span>
+          </div>
         </div>
       </div>
     </div>
     <br />
     <div class="author">
       <button class="glow-on-hover">
-        <a class="author-link" href="https://github.com/btj43">
-          Coded by Beth Jones
-        </a>
+        <div class="author-link-bubble">
+          Coded by Beth Jones <br />
+          <a class="author-link" href="www.linkedin.com/in/bethtjones"
+            >LinkedIn</a
+          >
+          <br />
+          <a class="author-link" href="https://github.com/btj43">GitHub </a>
+        </div>
       </button>
     </div>
     <br />
