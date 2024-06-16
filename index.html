@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background-color: #0c0e31;
+        background-image: url("starrysky.jpg");
+        color: #faf9f6;
+        background-attachment: fixed;
+        font-weight: 300;
+      }
+
+      header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+      }
+      .title {
+        text-align: center;
+        font-size: 70px;
+        font-weight: 300;
+        color: #e396df;
+        border-right: 3px solid #faf9f6;
+        animation: cursor 1s infinite step-end, typing 15s infinite steps(18);
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      @keyframes cursor {
+        0%,
+        100% {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #faf9f6;
+        }
+      }
+      @keyframes typing {
+        0% {
+          width: 0ch;
+        }
+        30% {
+          width: 18ch;
+        }
+        80% {
+          width: 18ch;
+        }
+        90% {
+          width: 0ch;
+        }
+        100% {
+          width: 0ch;
+        }
+      }
+      .magic {
+        font-size: 21px;
+        text-align: center;
+      }
+      .journey-timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      .journey-timeline::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background-color: #faf9f6;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+      }
+      .event-row {
+        position: relative;
+        margin-bottom: 30px;
+      }
+      .event-row::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #faf9f6;
+        border-radius: 50%;
+        top: 0;
+        left: 50%;
+        margin-left: -10px;
+      }
+      .event-row.left .event-box {
+        left: 60%;
+        width: 30%;
+      }
+      .event-row.right .event-box {
+        left: 10%;
+        width: 30%;
+      }
+      .event-box {
+        position: relative;
+        left: 30px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 30px;
+        padding: 10px;
+      }
+      .event-text {
+        margin-bottom: 10px;
+        padding: 5px;
+        text-wrap: pretty;
+        font-size: 18px;
+        text-align: center;
+      }
+      .languages {
+        font-weight: bold;
+        text-align: center;
+        font-size: 25px;
+        border: 2px solid #e396df;
+        border-radius: 8px;
+      }
+      .languages-row:hover .languages {
+        box-shadow: 0 0 50px 15px #48abe0;
+      }
+      .emotions {
+        text-align: center;
+        font-size: 12px;
+      }
+      .event-row:hover .emotions {
+        font-size: 17px;
+      }
+      .emoji {
+        font-size: 25px;
+      }
+      .author {
+        text-align: center;
+      }
+      .author-link-bubble {
+        color: #e396df;
+        padding: 10px;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+      .author-link-bubble:hover {
+        color: #0c0e31;
+        border-radius: 10px;
+        padding: 10px;
+        font-weight: 600;
+      }
+      .author-link-bubble:hover .author-link {
+        color: #0c0e31;
+      }
+      .author-link:active {
+        color: #faf9f6;
+      }
+      .author-link {
+        text-decoration: none;
+        color: #e396df;
+      }
+      .author-link:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 767px) {
+        .title {
+          font-size: 30px;
+        }
+        .magic {
+          font-size: 15px;
+        }
+        .event-row.left .event-box {
+          left: 60%;
+          width: 40%;
+        }
+        .event-row.right .event-box {
+          left: -5%;
+          width: 40%;
+        }
+        .event-text {
+          font-size: 15px;
+        }
+      }
+      .glow-on-hover {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      .glow-on-hover:before {
+        content: "";
+        background: linear-gradient(
+          80deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #7a00ff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+      }
+      .glow-on-hover:active {
+        color: #0c0e31;
+      }
+      .glow-on-hover:active:after {
+        background: transparent;
+      }
+      .glow-on-hover:hover:before {
+        opacity: 1;
+      }
+      .glow-on-hover:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+      }
+      @keyframes glowing {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+      button {
+        animation: wiggle 4s linear infinite;
+      }
+      /* Keyframes */
+      @keyframes wiggle {
+        0%,
+        7% {
+          transform: rotateZ(0);
+        }
+        15% {
+          transform: rotateZ(-15deg);
+        }
+        20% {
+          transform: rotateZ(10deg);
+        }
+        25% {
+          transform: rotateZ(-10deg);
+        }
+        30% {
+          transform: rotateZ(6deg);
+        }
+        35% {
+          transform: rotateZ(-4deg);
+        }
+        40%,
+        100% {
+          transform: rotateZ(0);
+        }
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding...My Journey</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">My journey to code...</h1>
+    </header>
+    <div class="magic">
+      The internet is just magic right...? <br />
+      In 2022 I decided to find out 🪄
+    </div>
+    <br />
+    <div class="journey-timeline">
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            I found myself randomly working in a tech company, what better place
+            to find out how it all works! I looked through many coding languages
+            to find out what builds the internet.
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🧐</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            Then in a random £20 online course from who knows where I learnt the
+            3 foundations of the internet.
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😊</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row right languages-row">
+        <div class="event-box">
+          <div class="event-text languages">
+            HTML <br />CSS <br />Javascript
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            Getting a pink, underlined '<span
+              style="text-decoration: underline; color: #e396df"
+              >Hello World</span
+            >' printed on a page... I was hooked
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🤩</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            I worked with tech geniuses so I continued to learn from them and
+            ask endless questions.
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🤭</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            I knew I needed to learn more but the internet contains so much
+            information its a minefield.
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🤔</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            Codecademy was recommended to me and I was off playing with the
+            possibilities of code.
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😎</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            One of my mentors once said to me 'developers don't know how to do
+            everything, but they are the best at Googling' (thank goodness for
+            ChatGPT now...)
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😊</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            Unfortunately whilst enjoying this journey I found out I was being
+            made redundant.
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😢</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            Then a little instagram story popped up for me advertising SheCodes
+            👩‍💻
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🤓</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            It must have been the universe telling me to take the leap...
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🫣</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">
+            ...So I did, I completed my SheCodes course and I have now been a
+            software developer for 6 months!
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">🤗</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row right">
+        <div class="event-box">
+          <div class="event-text">
+            I have so much to learn, every day is a steep learning curve (some
+            days are more of a straight up cliff!)
+          </div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😵‍💫</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-row left">
+        <div class="event-box">
+          <div class="event-text">This journey is far from over!</div>
+          <div class="emotions">
+            Emotion gage: <br />
+            <span class="emoji">😇 🥳</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="author">
+      <button class="glow-on-hover">
+        <div class="author-link-bubble">
+          Coded by Beth Jones <br />
+          <a class="author-link" href="www.linkedin.com/in/bethtjones"
+            >LinkedIn</a
+          >
+          <br />
+          <a class="author-link" href="https://github.com/btj43">GitHub </a>
+        </div>
+      </button>
+    </div>
+    <br />
+    <script></script>
+  </body>
+</html>
